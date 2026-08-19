@@ -1,1 +1,818 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Lisandra Sousa Sociedade Individual de Advocacia</title>
+  <meta name="description" content="Lisandra Sousa Sociedade Individual de Advocacia. Atendimento jurídico em Brasília - DF. Entre em contato para informações e atendimento.">
+
+  <style>
+    :root {
+      --navy: #0c1726;
+      --navy-2: #13243a;
+      --gold: #c9a45c;
+      --gold-light: #e2c98d;
+      --white: #ffffff;
+      --cream: #f7f5f0;
+      --text: #263241;
+      --muted: #697586;
+      --border: #e7e3da;
+      --shadow: 0 15px 45px rgba(12, 23, 38, .10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(12, 23, 38, .97);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      display: block;
+      color: var(--gold-light);
+      font-size: 11px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: #e8edf3;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--gold-light);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 760px;
+      padding-top: 78px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(12,23,38,.98), rgba(12,23,38,.82)),
+        radial-gradient(circle at 80% 30%, #253b55, #0c1726 60%);
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.08;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      color: #d8dee7;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 3px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 95px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 55px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.2;
+      margin: 10px 0 15px;
+      font-weight: 500;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 30px;
+      color: var(--navy);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .highlight {
+      border-left: 3px solid var(--gold);
+      padding: 20px 25px;
+      background: white;
+      box-shadow: var(--shadow);
+      margin-top: 25px;
+      font-family: Arial, sans-serif;
+      color: var(--navy);
+    }
+
+    .about-card {
+      background: var(--navy);
+      color: white;
+      padding: 45px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card h3 {
+      color: var(--gold-light);
+      margin-bottom: 25px;
+      font-size: 25px;
+    }
+
+    .info {
+      display: grid;
+      gap: 18px;
+      font-family: Arial, sans-serif;
+    }
+
+    .info div {
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      padding-bottom: 12px;
+    }
+
+    .info strong {
+      display: block;
+      color: #9eaaba;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service {
+      padding: 35px 28px;
+      border: 1px solid var(--border);
+      background: white;
+      transition: .3s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--gold-light);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .service h3 {
+      color: var(--navy);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--navy-2);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #cbd3dd;
+      font-family: Arial, sans-serif;
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 35px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-card h3 {
+      color: var(--navy);
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a {
+      color: var(--navy);
+      word-break: break-word;
+    }
+
+    .contact-item a:hover {
+      color: #8f6e2f;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #080f19;
+      color: #aab4c1;
+      padding: 45px 0 25px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-brand {
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 18px;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .about-card {
+        padding: 30px;
+      }
+
+      .footer-grid,
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        Lisandra Sousa
+        <span>Advocacia</span>
+      </a>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#escritorio">Escritório</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Sociedade Individual de Advocacia
+        </div>
+
+        <h1>
+          Atendimento jurídico com seriedade e dedicação.
+        </h1>
+
+        <p>
+          Orientação e atendimento jurídico personalizados,
+          com foco em uma relação profissional, transparente
+          e responsável com cada cliente.
+        </p>
+
+        <div class="buttons">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5561992789801"
+            target="_blank"
+            rel="noopener noreferrer">
+            Falar pelo WhatsApp
+          </a>
+
+          <a class="btn btn-outline" href="#contato">
+            Conheça o escritório
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SOBRE -->
+  <section class="about" id="escritorio">
+    <div class="container">
+
+      <div class="section-title">
+        <small>O escritório</small>
+        <h2>Atendimento próximo e responsável</h2>
+        <p>
+          Um espaço dedicado à prestação de serviços jurídicos
+          de forma profissional e personalizada.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          <h3>Lisandra Sousa Sociedade Individual de Advocacia</h3>
+
+          <p>
+            O escritório atua na prestação de serviços jurídicos,
+            oferecendo orientação, consultoria, assessoria e
+            representação jurídica conforme as necessidades
+            de cada cliente.
+          </p>
+
+          <p>
+            Nosso compromisso é oferecer um atendimento claro,
+            ético e responsável, buscando compreender cada caso
+            individualmente.
+          </p>
+
+          <div class="highlight">
+            <strong>
+              Atendimento personalizado e comunicação transparente
+              durante cada etapa do serviço jurídico.
+            </strong>
+          </div>
+        </div>
+
+        <div class="about-card">
+
+          <h3>Informações do escritório</h3>
+
+          <div class="info">
+
+            <div>
+              <strong>Razão Social</strong>
+              Lisandra Sousa Sociedade Individual de Advocacia
+            </div>
+
+            <div>
+              <strong>CNPJ</strong>
+              66.630.766/0001-68
+            </div>
+
+            <div>
+              <strong>Natureza Jurídica</strong>
+              Sociedade Unipessoal de Advocacia
+            </div>
+
+            <div>
+              <strong>Situação</strong>
+              Ativa
+            </div>
+
+            <div>
+              <strong>Localização</strong>
+              Brasília - Distrito Federal
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ATUAÇÃO -->
+  <section id="atuacao">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>Atuação jurídica</small>
+        <h2>Como podemos ajudar</h2>
+        <p>
+          Conheça algumas das modalidades de atendimento jurídico
+          oferecidas pelo escritório.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service">
+          <div class="service-number">01</div>
+          <h3>Consultoria Jurídica</h3>
+          <p>
+            Orientação jurídica individualizada para análise de
+            questões e situações apresentadas pelo cliente.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">02</div>
+          <h3>Assessoria Jurídica</h3>
+          <p>
+            Acompanhamento e orientação jurídica de acordo com
+            as necessidades específicas de cada situação.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">03</div>
+          <h3>Atuação Judicial</h3>
+          <p>
+            Representação e acompanhamento de demandas judiciais,
+            quando cabível e mediante contratação profissional.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">04</div>
+          <h3>Orientação Preventiva</h3>
+          <p>
+            Análise jurídica preventiva para auxiliar na tomada
+            de decisões com maior segurança.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">05</div>
+          <h3>Análise de Documentos</h3>
+          <p>
+            Avaliação jurídica de documentos e situações
+            apresentadas para análise profissional.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">06</div>
+          <h3>Atendimento Personalizado</h3>
+          <p>
+            Atendimento individual para compreender o caso e
+            indicar as possibilidades jurídicas aplicáveis.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+
+      <h2>Precisa de orientação jurídica?</h2>
+
+      <p>
+        Entre em contato para apresentar sua situação e verificar
+        a possibilidade de atendimento jurídico.
+      </p>
+
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/5561992789801"
+        target="_blank"
+        rel="noopener noreferrer">
+        Entrar em contato
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- CONTATO -->
+  <section class="contact" id="contato">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>Contato</small>
+        <h2>Fale com o escritório</h2>
+        <p>
+          Utilize um dos canais abaixo para entrar em contato.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <h3>Atendimento</h3>
+
+          <div class="contact-item">
+            <strong>WhatsApp</strong>
+            <a
+              href="https://wa.me/5561992789801"
+              target="_blank"
+              rel="noopener noreferrer">
+              (61) 99278-9801
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <strong>WhatsApp / Telefone</strong>
+            <a
+              href="https://wa.me/5561992905471"
+              target="_blank"
+              rel="noopener noreferrer">
+              (61) 99290-5471
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <strong>E-mail</strong>
+            <a href="mailto:lisandras.adv@gmail.com">
+              lisandras.adv@gmail.com
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>Endereço</h3>
+
+          <div class="contact-item">
+            <strong>Escritório</strong>
+            Quadra QL 5 Conjunto I, 14<br>
+            Itapoã II<br>
+            Brasília - DF<br>
+            CEP 71590-687
+          </div>
+
+          <div class="contact-item">
+            <strong>CNPJ</strong>
+            66.630.766/0001-68
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          Lisandra Sousa Sociedade Individual de Advocacia
+        </div>
+
+        <div>
+          Brasília - Distrito Federal
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <div>
+          © 2026 Lisandra Sousa Sociedade Individual de Advocacia.
+          Todos os direitos reservados.
+        </div>
+
+        <div>
+          CNPJ 66.630.766/0001-68
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
